@@ -1,24 +1,30 @@
+
+
 //
 //  ViewController.swift
-//  LoaderPod
+//  loader
 //
-//  Created by Nandhini1430 on 07/20/2022.
-//  Copyright (c) 2022 Nandhini1430. All rights reserved.
+//  Created by nandhini-pt5566 on 18/07/22.
 //
 
 import UIKit
+import LoaderPod
 
 class ViewController: UIViewController {
 
+    let loader=Loader()
+    var loaderView:UIAlertController!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func changeColor(_ sender: UIButton) {
+        loaderView=loader.loader(color: .systemPink)
+        present(loaderView, animated: true, completion: nil)
+        loader.stopLoader(loader: loaderView)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
+    
 }
 
