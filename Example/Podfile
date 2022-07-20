@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '10.0'
+
+target 'LoaderPod_Example' do
+  pod 'LoaderPod', :path => '../'
+
+  target 'LoaderPod_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
